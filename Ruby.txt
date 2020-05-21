@@ -1,0 +1,79 @@
+BDD - Story testing approach
+Keyword - given-when-then format
+you can write descriptioin Gherkin language in cucumber
+it support Java as well
+
+keywork-
+1. Feature
+2.Scenario
+3.Given - Can be used only once in a story approch
+4.Then
+5. And 
+6. When - can be used multiple times in a story approch
+
+object element
+1. XPATH,CSS - OBJECT IDENTIFICATION
+
+demo.opencart.com
+Chropath
+
+SYNTAX - //tag[<@propert_name>=<property_Value>]
+
+Insallation:-
+INSTALLATION ON BDD CUCUMBER:
+1.https://rubyinstaller.org/downloads/
+2.https://www.jetbrains.com/ruby/download/#section=windows
+3.Open command prompt and type the gems one by one until it executes.
+.gem install cucumber
+.gem install bundler
+.gem install selenium-webdriver
+.gem install watir-webdriver
+
+Folder Structure
+Project->feature->Support, Step Definitions
+support - driversetting.rb (Ruby File)
+Ruby file extension .rb
+
+Folder inside support folder run by default.
+
+Import gems in Ruby
+
+require 'watir.webdriver (watir - Web Application Testing in Ruby)
+
+story will be written in cucumber platform
+sample story
+Feature: DemoOpen Cart Application
+  Scenario: Login Functionality check
+    Given I launch the demo cart application
+    Then I click on the login link
+    And I enter my email and password
+    When I enter the credentials I do validate the user
+    Then i click on the login button
+    And I logout of the application
+<a href="https://demo.opencart.com/index.php?route=account/account" title="My Account" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md">My Account</span> <span class="caret"></span></a>
+
+$browser.text_field(id:'input-firstname').present?
+Selenium::WebDriver::Chrome::Service.driver_path = "D:\\Assigment\\chromedriver.exe"
+browser =  Watir::Browser.new :chrome
+$browser = browser
+#@browser.goto"www.optus.com.au"
+
+irb
+require 'rubygems'
+require 'watir'
+Selenium::WebDriver::Chrome::Service.driver_path = "D:\\Assigment\\chromedriver.exe"
+browser =  Watir::Browser.new :chrome
+$browser = browser
+$browser.goto"demo.opencart.com"
+$browser.window.maximize
+$browser.a(href:"https://demo.opencart.com/index.php?route=account/account").click
+$browser.a(href:"https://demo.opencart.com/index.php?route=account/register").click
+$browser.text_field(id:'input-firstname').present?
+$browser.text_field(id:'input-firstname').set 'abc'
+$browser.text_field(id:'input-lastname').set 'def'
+$browser.text_field(id:'input-email').set 'abc@gmail.com'
+$browser.text_field(id:'input-telephone').set '0401857496'
+$browser.text_field(id:'input-password').set 'fasr@g12'
+$browser.text_field(id:'input-confirm').set 'fasr@g12'
+$browser.radio(name:'newsletter').present?
+$browser.radio(name:'newsletter',:index=>0).click
